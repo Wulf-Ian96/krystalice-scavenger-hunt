@@ -1,19 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import clueData from "../clueData";
+import { clueData } from "../clueData";
 //import your images for the cards---- syntax : import from "../images/imageName.jpg/png" have to point to the directory of the image folder
 
 //----------------end of importing
 
-export default function ClueCard() {
-  const [clueInput, setClueInput] = useState("");
-  const [currCard, setCurrCard] = useState(0);
-
+export default function ClueCard({
+  currCard,
+  setCurrCard,
+  clueInput,
+  setClueInput,
+}) {
+  const counter = clueData.length;
+  console.log("currCard: " + currCard);
+  const currIndex = clueData[currCard];
+  console.log("counter:" + counter);
   const handleNext = () => {
-    if (clueInput == clueData[currCard].cluePassword) {
+    if (
+      clueInput === clueData[currCard].cluePassword &&
+      counter >= currIndex.clueNum
+    ) {
       alert("good guess!");
-      setTimeout(() => setCurrCard((prevState) => prevState + 1), 1000);
+      setTimeout(
+        () =>
+          counter >= currCard
+            ? setCurrCard((prevState) => prevState + 1)
+            : setCurrCard((prevState) => prevState + 0),
+        1000
+      );
     } else {
       alert("try again");
     }
@@ -22,7 +37,6 @@ export default function ClueCard() {
     setCurrCard((prevState) => prevState - 1);
   };
 
-  console.log(clueInput);
   return (
     <div className="card-container">
       <button className="btn" onClick={handlePrev}>
@@ -36,7 +50,11 @@ export default function ClueCard() {
         >
           <h1 className="title">{clue.clueNum}</h1>
           <a className="clue-img" href={clue.clueLink}>
-            <img className="clue-img" src={clue.clueImg} />
+            <img
+              className="clue-img"
+              src={clue.clueImg}
+              alt=" clue  / link to google maps"
+            />
           </a>
           <p className="clue-text">{clue.clueTxt}</p>
 

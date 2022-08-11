@@ -9,18 +9,18 @@ import image3 from "./images/image-3.jpg";
 //  the "key" (first item on the left of the :) needs to be identical when creating new cluecards
 // Everything else can be the same and will need to be a string, except for the image that will be the same name you import it as
 
-const clueData = [
+export const clueData = [
   {
-    clueNum: "Clue 1",
+    clueNum: 1,
     clueImg: image1,
     clueTxt:
       "Duis cillum nisi sint officia pariatur ea id dolore proident eu tempor. Anim consequat excepteur pariatur reprehenderit incididunt ",
     clueLink:
-      "https://www.google.com/maps/@40.8165736,-96.6674976,365m/data=!3m1!1e3",
+      "https://www.google.com/maps/@40.7988702,-96.6763568,77m/data=!3m1!1e3",
     cluePassword: "password1",
   },
   {
-    clueNum: "clue 2",
+    clueNum: 2,
     clueImg: image2,
     clueTxt: "Duis cillum nisi sint officia pariatur ",
     clueLink:
@@ -28,7 +28,7 @@ const clueData = [
     cluePassword: "password1",
   },
   {
-    clueNum: "clue 3",
+    clueNum: 3,
     clueImg: image3,
     clueTxt: "Duis cillum nisi sint officia pariatur ",
     clueLink:
@@ -37,4 +37,11 @@ const clueData = [
   },
 ];
 
-export default clueData;
+export const finalClue = {
+  clueNum: "Final Answer",
+  clueImg: image3,
+  clueTxt: "Duis cillum nisi sint officia pariatur ",
+  clueLink:
+    "https://www.google.com/maps/@40.8165736,-96.6674976,365m/data=!3m1!1e3",
+  cluePassword: "password1",
+};
