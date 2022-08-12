@@ -1,0 +1,103 @@
+.admin {
+  background-color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin > a {
+  background-color: white;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin-top: 2rem;
+}
+.admin-form > label {
+  color: #0083b0;
+}
+.clue-box-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.clue-box {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.clue-info {
+  margin-top: 5px;
+}
+
+strong {
+  color: #0083b0;
+}
+
+/* ----------delete btn ---------------- */
+
+.delete-btn {
+  align-items: center;
+  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 1em;
+  width: 100px;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  grid-row: 4/5;
+  grid-column: 2/3;
+  margin-top: 15px;
+}
+
+.delete-btn:active,
+.delete-btn:hover {
+  outline: 0;
+}
+
+.delete-btn span {
+  background-color: rgb(5, 6, 45);
+  padding: 8px 12px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.delete-btn:hover span {
+  background: none;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 881px) {
+  .clue-box-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

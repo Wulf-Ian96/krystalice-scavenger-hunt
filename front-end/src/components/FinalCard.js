@@ -8,7 +8,7 @@ export default function FinalCard() {
       alert("Final answer completed! Hunt over!");
     }
   };
-  console.log(clueInput);
+
   return (
     <div className="card-container">
       <div
