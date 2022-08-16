@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { signOut, getAuth } from "firebase/auth";
 import { useLocation } from "react-router-dom";
-import { stack as Menu } from "react-burger-menu";
+
 export default function Navbar({ setCurrUser, currUser, adminId }) {
   const [isMobile, setisMobile] = useState(window.innerWidth > 655);
 
