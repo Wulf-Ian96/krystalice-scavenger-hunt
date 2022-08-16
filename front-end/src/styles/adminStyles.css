@@ -1,6 +1,5 @@
 .admin {
-  background-color: white;
-  height: 100%;
+  height: calc(100% - 54px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,40 +11,62 @@
 .admin-form {
   display: flex;
   flex-direction: column;
+  width: 25%;
   background-color: #f9f9f9;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   margin-top: 2rem;
+  letter-spacing: 1.2px;
 }
 .admin-form > label {
-  color: #0083b0;
+  color: #222;
 }
 .clue-box-container {
   width: 100vw;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 .clue-box {
   background-color: #f9f9f9;
   padding: 1rem;
   margin: 1rem;
+  width: 400px;
+  letter-spacing: 1.06px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .clue-info {
   margin-top: 5px;
 }
-
+.admin-clue-img {
+  margin-top: 5px;
+  width: 370px;
+  height: 250px;
+  border-radius: 15px;
+}
 strong {
-  color: #0083b0;
+  color: #222;
+}
+.upload-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  width: 85%;
 }
 
 /* ----------delete btn ---------------- */
 
 .delete-btn {
   align-items: center;
-  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  background-image: linear-gradient(
+    to right,
+    rgb(134, 133, 133),
+    rgb(90, 89, 89),
+    black
+  );
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -69,6 +90,9 @@ strong {
   grid-row: 4/5;
   grid-column: 2/3;
   margin-top: 15px;
+}
+.upload-container > .delete-btn {
+  margin-top: 0;
 }
 
 .delete-btn:active,
@@ -95,9 +119,97 @@ strong {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 881px) {
+/* login form */
+
+.login-form {
+  color: white;
+  background-color: #f1f0f0;
+  display: flex;
+  height: 200px;
+  justify-content: space-between;
+  width: 350px;
+}
+.login-input {
+  grid-row: 3/3;
+  grid-column: 2/3;
+  border: none;
+  border-bottom: 2px solid rgb(90, 89, 89);
+  outline: 0;
+  background-color: #f1f0f0;
+  padding: 2px;
+}
+.login-input:focus {
+  border: 2px solid rgb(90, 89, 89);
+  outline: rgb(90, 89, 89);
+}
+.admin-login {
+  height: 100vh;
+}
+.login-btn {
+  margin-bottom: 0;
+  width: 50%;
+  align-self: center;
+}
+
+.logout {
+  height: 100%;
+}
+.hidden {
+  display: none;
+}
+
+form > .btn {
+  background-color: rgba(36, 35, 35, 0.73);
+  font-size: 0.85rem;
+}
+form > .btn:hover {
+  background-color: #222;
+}
+@media screen and (max-width: 900px) {
+  .clue-box {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin: 1rem;
+    width: 40vw;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  .admin-clue-img {
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    height: 4rem;
+  }
   .clue-box-container {
     display: flex;
     flex-direction: column;
+    width: 100vw;
+    flex-wrap: nowrap;
+  }
+  .clue-box {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin: 1rem;
+    width: 80vw;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  .admin-clue-img {
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  .admin-form {
+    width: 80%;
+  }
+  .upload-container {
+    width: 100%;
   }
 }

@@ -5,53 +5,56 @@
   font-family: "Roboto Slab", serif;
 }
 body {
-  background-color: rgb(17, 17, 17);
+  background-color: rgba(15, 15, 15, 0.808);
 }
 /* ------------------ NavBar Styling ---------------- */
-
+.nav-contianer {
+  display: block;
+}
 nav {
   width: 100%;
-  height: 4rem;
-  background-color: #0083b0;
+  height: 54px;
+  background-color: #222;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  z-index: 3000;
 }
 
 nav > h5 {
   font-size: 2rem;
+  color: #fff;
+  letter-spacing: 1.2px;
 }
 
 .nav-link {
-  width: 150px;
+  height: 50%;
+  width: 200px;
   display: flex;
+  align-content: center;
   flex-direction: row;
-  justify-content: space-between;
-}
-
-.nav-link > a {
-  background-color: white;
-  padding: 5px;
-  border: 5px solid #00b4db;
-  border-radius: 5px;
-  color: black;
-  text-decoration: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  justify-content: flex-end;
 }
 
 .nav-link > a:hover {
   transform: scale(1.1);
 }
 
+.nav-link > .btn {
+  background-color: transparent;
+}
+
 /* ------------------ End of Navbar ----------------- */
 .app-container {
   display: flex;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 54px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 .app-container > a {
   background-color: white;
@@ -61,6 +64,7 @@ nav > h5 {
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 }
 .clue-container {
   display: grid;
@@ -72,7 +76,7 @@ nav > h5 {
   padding: 0;
   /* border: 2px solid black; */
   border-radius: 15px;
-  background-color: #f1f0f0;
+  background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
@@ -81,8 +85,14 @@ nav > h5 {
 .title {
   grid-column: 2/2;
   grid-row: 1/2;
-  color: #0083b0;
-  border-bottom: 2px solid #00b4db;
+  color: rgb(90, 89, 89);
+  border-bottom: 2px solid #222;
+}
+.title-final {
+  text-align: center;
+  color: rgb(90, 89, 89);
+  border-bottom: 2px solid #222;
+  margin-bottom: 10px;
 }
 .clue-text {
   grid-row: 2/3;
@@ -103,13 +113,13 @@ nav > h5 {
   grid-row: 3/3;
   grid-column: 2/3;
   border: none;
-  border-bottom: 2px solid #0083b0;
+  border-bottom: 2px solid rgb(90, 89, 89);
   outline: 0;
-  background-color: #f1f0f0;
+  background-color: #fff;
   padding: 2px;
 }
 .clue-input:focus {
-  border: 2px solid #0083b0;
+  border: 2px solid rgb(90, 89, 89);
 }
 
 /* Buton styling */
@@ -129,7 +139,7 @@ nav > h5 {
   font-weight: 600;
   line-height: normal;
   margin: 0;
-  max-height: 60px;
+
   min-width: 0;
   outline: none;
 
@@ -138,7 +148,7 @@ nav > h5 {
   transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
   user-select: none;
   touch-action: manipulation;
-
+  justify-self: center;
   will-change: transform;
 }
 
@@ -148,7 +158,7 @@ nav > h5 {
 
 .btn:hover {
   color: #fff;
-  background-color: #1a1a1a;
+  background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
@@ -164,10 +174,15 @@ nav > h5 {
 
 .submit-btn {
   align-items: center;
-  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  background-image: linear-gradient(
+    to right,
+    rgb(134, 133, 133),
+    rgb(90, 89, 89),
+    black
+  );
   border: 0;
   border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-shadow: rgba(90, 89, 89, 0), 0 15px 30px -5px;
   box-sizing: border-box;
   color: #ffffff;
   display: flex;
@@ -235,7 +250,7 @@ nav > h5 {
     padding: 0;
     /* border: 2px solid black; */
     border-radius: 15px;
-    background-color: #f1f0f0;
+
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
 
@@ -250,6 +265,7 @@ nav > h5 {
     margin: 0 10px;
   }
   .clue-img {
+    margin-top: 5px;
     width: 100%;
     height: 100%;
     grid-row: 2/3;
@@ -265,10 +281,20 @@ nav > h5 {
     grid-row: 5/6;
     grid-column: 2/3;
   }
+}
+
+@media screen and (max-width: 655px) {
   nav > h5 {
     font-size: 1rem;
   }
   nav {
     height: 2rem;
+  }
+
+  .app-container {
+    height: 100vh;
+  }
+  .card-container {
+    margin-bottom: 0;
   }
 }

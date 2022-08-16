@@ -13,11 +13,10 @@ export default function ClueCard({
   setClueInput,
   cluesData,
 }) {
+  console.log(cluesData);
   const counter = cluesData.length;
 
   const currIndex = cluesData[currCard];
-  console.log(currIndex);
-  console.log(currCard);
 
   const handleNext = () => {
     if (
