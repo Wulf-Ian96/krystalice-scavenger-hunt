@@ -46,3 +46,8 @@ after making your changes you will need to run two commands in your ide terminal
 # 3) firebase deploy
 
     this command will deploy your production build to the firebase hosting and get your changes live. Can take up to 10 mins to see changes.
+
+# 4) npm start
+
+    while you are making changes run this in the terminal, after you've made sure you're in the front-end directory (cd front-end)
+    then enter "npm start" and this will start the application on localHost:3000 so you can see the changes live while you're making them
