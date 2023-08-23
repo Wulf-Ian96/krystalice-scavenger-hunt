@@ -30,7 +30,7 @@ export default function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [currUser, setCurrUser] = useState("");
-  const adminId = "pKVgfKpruBeNlAVc0umm8xDyAU33";
+  const adminId = "NYX9GWKA7VM1fPU6ZaAqBaXjq162";
   console.log(cluesData);
   return (
     <BrowserRouter>
